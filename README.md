@@ -8,6 +8,9 @@ Simply put: it records what has been changed or edited and gives you the ability
 A picture is worth a thousand words, so here is a visual representation of what this gem is about:
 
 ![Example usage](http://i.imgur.com/uGPSm.png)
+
+Wersja z ikonami:
+
 ![Example usage](http://i.imgur.com/TyOWa.png)
 
 ## Installation
