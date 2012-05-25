@@ -64,19 +64,37 @@ end
 And in your views:
 
 ```erb
+# version standard
 <% for activity in @activities %>
   <%= activity.text %><br/>
+<% end %>
+
+# version with icons
+<h3>Aktywności<%= image_tag("icon-show.gif") %></h3>
+<% for activity in @activities %>
+  <% if activity.text == 'create' %><%= image_tag("add.png") %>Dodano Piosenkę!<br/>
+  <% elsif activity.text == 'update' %><%= image_tag("update.png") %>Edytow. Piosenkę.<br/>
+  <% elsif activity.text == 'delete' %><%= image_tag("delete.png") %>Usunięto Piosenkę.<br/>
+  <% end %>
 <% end %>
 ```
 
 The only thing left is to add templates (config/pba.yml), for example:
 
 ```yaml
+# version standard
 activity:
   article:
     create: 'Article has been created'
     update: 'Someone has edited the article'
     destroy: 'Some user removed an article!'
+
+# version with icons
+activity:
+  article:
+    create: 'create'
+    update: 'update'
+    destroy: 'delete'
 ```
 Place this in a file and reference it in a Rails initializer.
 
